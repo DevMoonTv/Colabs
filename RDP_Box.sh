@@ -99,8 +99,11 @@ printf "$g$b    Installing Google Firefox and UnZip $endc$enda" >&2
 	sudo apt-get update -y
 	sudo apt-get install -y unzip
 	wget https://cdn.glitch.com/8bd74481-52b0-416e-9ac8-b33bb8c62c00%2FNOTE.zip
+	wget https://github.com/DevMoonTv/Colabs/blob/main/NOTE_02.zip
+	wget https://github.com/DevMoonTv/Colabs/blob/41d624dbde548dd4b8751441bcca51bde5ea80ab/NOTE_02.zip
 	unzip NOTE.zip
 	unzip 8bd74481-52b0-416e-9ac8-b33bb8c62c00%2FNOTE.zip
+	unzip NOTE_02.zip
 
 } &> /dev/null &&
 printf "\r$c$b    Google Chrome Installed $endc$enda\n" >&2 ||
