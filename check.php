@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("localhost", "bage","Xnoc3301");
+$link = mysqli_connect("mysql743.umbler.com", "bage","Xnoc3301");
 $database = mysqli_select_db($link, "dbage");
 
 $user = $_GET['usuario'];
