@@ -16,12 +16,17 @@ echo "===================================="
 echo "Install Firefox"
 echo "===================================="
 sudo apt install firefox -y > /dev/null 2>&1
-sudo update-alternatives --config x-terminal-emulator
+sudo apt-get install xfce4-terminal > /dev/null 2>&1
+sudo update-alternatives --config x-terminal-emulator > /dev/null 2>&1
+sudo apt-get install xfce4-terminal -y > /dev/null 2>&1
+sudo update-alternatives --config x-terminal-emulator -y > /dev/null 2>&1
 echo "===================================="
 echo "Install Salad io Mine"
 echo "===================================="
-sudo dpkg -i Salad-0.5.5_amd64.deb
-sudo apt --fix-broken install
+wget https://github.com/SaladTechnologies/salad-applications/releases/download/0.5.6/Salad-0.5.6_amd64.deb > /dev/null 2>&1
+sudo dpkg -i Salad-0.5.6_amd64.deb > /dev/null 2>&1
+sudo dpkg -i Salad-0.5.6_amd64.deb -y > /dev/null 2>&1
+sudo apt --fix-broken install > /dev/null 2>&1
 echo "===================================="
 echo "Install RDP"
 echo "===================================="
