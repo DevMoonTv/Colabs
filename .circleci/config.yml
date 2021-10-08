@@ -1,0 +1,22 @@
+version: 2.1 
+ 
+orbs:
+  win: circleci/windows@2.4.1
+ 
+jobs:
+  build: 
+    executor:
+      name: win/default 
+      size: "medium" 
+ 
+    steps:
+      - checkout      
+      - run: Set-LocalUser -Name "Administrator" -Password (ConvertTo-SecureString -AsPlainText "Akuhnet123" -Force)
+      - run: Get-LocalUser -Name "Administrator" | Enable-LocalUser 
+      - run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
+      - run: tar xf ngrok.zip
+      - run: Copy ngrok.exe C:\Windows\System32
+      - run: cmd /c echo ./ngrok.exe authtoken "1mvmPK7pmzW57omFCmYHUP0aMyE_FwF67NzUr83oAFugtKMs" >a.ps1
+      - run: cmd /c echo cmd /k start ngrok.exe tcp --region ap 3389 >>a.ps1
+      - run: cmd /c echo ping -n 999999 google.com >>a.ps1
+      - run: .\a.ps1
